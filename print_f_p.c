@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include "holberton.h"
 
-#include "holberton.h"
-
 /**
  * _printf - print string as printf
  * @format: number of arguments
