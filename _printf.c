@@ -1,36 +1,43 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "holberton.h"
-
 #include "holberton.h"
 
 /**
- * _printf - print string as printf
- * @format: number of arguments
- * Return: void
- **/
+ * _printf - prints a formatted string
+ * @format: string to print
+ *
+ * Return: number of characters printed
+ */
+
 int _printf(const char *format, ...)
 {
-	va_list ap;
-	unsigned int i, result;
+	unsigned int i, buff_i;
+	char *buff, *str = format;
+	int index;
+	char c;
 
-	result = 0;
-	va_start(ap, format);
+	if (format == NULL)
+		return;
 
-	for (i = 0; format[i] != '\0'; i++)
+	va_list valist;
+	va_start(valist, format);
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		while (str[i] != '%')
 		{
-			result += pull_print(format[i + 1], &ap);
+			buff[buff_i] = str[i];
+			buff_i++;
 			i++;
 		}
-		else
-		{
-			_putchar(format[i]);
-			result++;
-		}
+		i++;
+
+		c = str[i];
+		if (c == '\0' || c == '%')
+			buff[buff_i] = ('%');
+		id_flag(c);
 	}
-	va_end(ap);
-	return (result);
-}
+	va_end(valist);
+
+	write(1, buff, buff_i);
+
+	return (buff_i);
+
