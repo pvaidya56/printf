@@ -40,4 +40,4 @@ int _printf(const char *format, ...)
 	write(1, buff, buff_i);
 
 	return (buff_i);
-
+}
