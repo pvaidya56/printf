@@ -41,4 +41,3 @@ int _printf(const char *format, ...)
 
 	return (buff_i);
 
-}
