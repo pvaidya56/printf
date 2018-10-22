@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i;
+	unsigned int i, buff_i;
 	char *buff, *str = format;
 	int index;
 	char c;
@@ -24,22 +24,21 @@ int _printf(const char *format, ...)
 	{
 		while (str[i] != '%')
 		{
-			buff[i] = str[i];
-			str++;
+			buff[buff_i] = str[i];
+			buff_i++;
+			i++;
 		}
 		i++;
 
 		c = str[i];
 		if (c == '\0' || c == '%')
-			buff[i] = ('%');
+			buff[buff_i] = ('%');
 		id_flag(c);
 	}
 	va_end(valist);
 
-	//write buff to stdout
+	write(1, buff, buff_i);
 
-	i = _strlen(buff); //or sizeof(buff)
-
-	return (i);
+	return (buff_i);
 
 }
