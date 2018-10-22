@@ -11,6 +11,7 @@ typedef struct conv_spec = {
 } spec;
 
 int _printf(const char *format, ...);
+int func_print(char k, va_list *spec);
 int buff_d(double dou);
 int buff_i(int in);
 int buff_c(char ch);
