@@ -10,23 +10,28 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i;
-	char *buff, *str;
+	char *buff, *str = format;
 	int index;
 	char c;
+
+	if (format == NULL)
+		return;
 
 	va_list valist;
 	va_start(valist, format);
 
-	for (str = format; *str != '\0'; str++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		while (*str != '%')
+		while (str[i] != '%')
 		{
-			*buff = *str;
+			buff[i] = str[i];
 			str++;
 		}
-		str++;
+		i++;
 
-		c = *str;
+		c = str[i];
+		if (c == '\0' || c == '%')
+			buff[i] = ('%');
 		id_flag(c);
 	}
 	va_end(valist);
