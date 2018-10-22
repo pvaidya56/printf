@@ -33,11 +33,11 @@ int _printf(const char *format, ...)
 		c = str[i];
 		if (c == '\0' || c == '%')
 			buff[buff_i] = ('%');
-		id_flag(c);
+		func_print(c);
 	}
 	va_end(valist);
 
 	write(1, buff, buff_i);
 
 	return (buff_i);
-
+}
