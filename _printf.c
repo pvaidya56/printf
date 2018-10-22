@@ -1,0 +1,40 @@
+#include "holberton.h"
+
+/**
+ * _printf - prints a formatted string
+ * @format: string to print
+ *
+ * Return: number of characters printed
+ */
+
+int _printf(const char *format, ...)
+{
+	unsigned int i;
+	char *buff, *str;
+	int index;
+	char c;
+
+	va_list valist;
+	va_start(valist, format);
+
+	for (str = format; *str != '\0'; str++)
+	{
+		while (*str != '%')
+		{
+			*buff = *str;
+			str++;
+		}
+		str++;
+
+		c = *str;
+		id_flag(c);
+	}
+	va_end(valist);
+
+	//write buff to stdout
+
+	i = _strlen(buff); //or sizeof(buff)
+
+	return (i);
+
+}
