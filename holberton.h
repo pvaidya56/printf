@@ -16,5 +16,7 @@ int buff_i(int in);
 int buff_c(char ch);
 int buff_s(char *str);
 int buff_b(int binary);
+int _strlen(char *strn);
+
 
 #endif
