@@ -1,18 +1,20 @@
 int _itoa(int z)
 {
 	int x;
-
+	if (z < 0)
+	{
+		putchar('-');
+		z = -(z);
+	}
 	while (z >= 10)
 	{
 		x = z % 10;
-		//buff[i] = x;
 		_putchar(x);
 		z = z / 10;
 		i++;
 	}
 	i++;
-	//buff[i] = z;
-	_putchar(z);
+	_putchar(z + 48);
 
 	return (z);
 }
