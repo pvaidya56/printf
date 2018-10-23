@@ -20,9 +20,7 @@ int _itoa(int z)
 		x = z % 10;
 		_putchar(x + 48);
 		z = z / 10;
-		i++;
 	}
-	i++;
 	_putchar(z + 48);
 
 	return (z);
@@ -43,7 +41,7 @@ int buff_d(va_list valist)
 	k = va_arg(valist, double);
 	z = _itoa(k);
 	z++;
-	_putchar('.')
+	_putchar('.');
 	while (k * 10 >= 1)
 	{
 		y = z % 1;
