@@ -54,36 +54,52 @@ int buff_d(va_list valist)
 	return (d_index);
 }
 
+/**
+ * buff_c - prints a character to stdout
+ * @valist: variable argument list from _printf
+ *
+ * Return: 1 on success
+ */
+
 int buff_c(va_list valist)
 {
 	_putchar(va_arg(valist, char));
 	return (1);
 }
 
+/**
+ * buff_i - prints an integer to stdout
+ * @valist: variable argument list from _printf
+ *
+ * Return: number of characters printed
+ */
+
 int buff_i(va_list valist)
 {
-	int i = 0;
-	x = (char *)va_arg(valist, int);
+	int x = 0;
+	x = _itoa(va_arg(valist, int));
 
-	while (*x != '\0')
-	{
-		_putchar(x);
-		i++;
-	}
-	return (i);
+	return (x);
 }
+
+/**
+ * buff_s - prints a string to stdout
+ * @valist: variable argument list from _printf
+ *
+ * Return: number of characters printed
+ */
 
 int buff_s(va_list valist)
 {
-	int i = 0;
+	int i_s = 0;
 	char *st = va_arg(valist, char *);
 
 	while (*st != '\0')
 	{
 		_putchar(*st);
 		st++;
-		i++;
+		i_s++;
 	}
 
-	return(i);
+	return(i_s);
 }
