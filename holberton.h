@@ -12,13 +12,12 @@ typedef struct conv_spec
 } spec;
 
 int _printf(const char *format, ...);
-int func_print(char k, va_list *spec);
-int buff_d(double dou);
-int buff_i(int in);
-int buff_c(char ch);
-int buff_s(char *str);
-int buff_b(int binary);
-int _strlen(char *strn);
+int func_print(char k, va_list valist);
+int print_d(va_list valist);
+int print_i(va_list valist);
+int print_s(va_list valist);
+void rev_buff(char *s);
+void _putchar(char c);
 
 
 #endif

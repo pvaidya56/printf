@@ -9,9 +9,13 @@
  * Return:gcc The function
  */
 
-int func_print(char k, va_list *spec)
+int func_print(char k, va_list valist)
 {
 	int i;
+
+	spec chars;
+
+	spec chars = (struct conv_spec *)malloc(5 * sizeof(struct conv_spec);
 
 	spec chars[] {
 		{"c", buff_i},

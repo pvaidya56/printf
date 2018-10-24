@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			_putchar('%');
 		}
 
-		func_print(c);
+		func_print(c, valist);
 		i++;
 		vacount++;
 	}
