@@ -10,15 +10,15 @@
  * Return:gcc The function
  */
 
-int func_print(char k, va_list spec)
+int func_print(char k, va_list valist)
 {
 	int i;
 
 	spec chars[] = {
-                {"c", print_i},
-                {"s", print_s},
-                {"d", print_d},
-                {"i", print_i},
+                {'c', print_i},
+                {'s', print_s},
+                {'d', print_d},
+                {'i', print_i},
                 {'\0', NULL},
 	};
 
@@ -36,9 +36,8 @@ int func_print(char k, va_list spec)
 	{
 		if (chars[i].id == k)
 		{
-
+			
 			return (chars[i].func(spec));
 		}
 	}
-	va_end(spec);
 }

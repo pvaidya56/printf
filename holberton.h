@@ -9,7 +9,7 @@
 typedef struct conv_spec
 {
 	char id;
-	char *func;
+	int (*func)(va_list);
 } spec;
 
 int _printf(const char *format, ...);
