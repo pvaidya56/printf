@@ -29,7 +29,7 @@ int _itoa(int z)
 	buff[zind]++;
 	buff[zind] = (z + 48);
 
-	buff = rev_buff(buff, zind);
+	buff = rev_buff(buff);
 
 	for (ind = 0; ind != '\0'; ind++)
 		;
