@@ -9,19 +9,29 @@
 
 int _itoa(int z)
 {
-	int x;
+	int x, ind, zind;
+	int *buff;
+
+	buff = malloc(sizeof(z));
+
 	if (z < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		z = -(z);
 	}
-	while (z >= 10)
+	for (zind = 0;z >= 10; zind++)
 	{
 		x = z % 10;
-		_putchar(x + 48);
+		buff[zind] = x + 48;
 		z = z / 10;
+		buff[zind]++;
 	}
-	_putchar(z + 48);
+	buff[zind]++;
+	buff[zind] = (z + 48);
+
+	buff = rev_buff(buff, zind);
+
+	for (ind = 0; 
 
 	return (z);
 }
