@@ -10,7 +10,7 @@
 int _itoa(int z)
 {
 	int x, ind, zind;
-	int *buff;
+	char *buff;
 
 	buff = malloc(sizeof(z));
 
@@ -29,7 +29,7 @@ int _itoa(int z)
 	buff[zind]++;
 	buff[zind] = (z + 48);
 
-	buff = rev_buff(buff);
+        rev_buff(buff);
 
 	for (ind = 0; ind != '\0'; ind++)
 		;
@@ -72,7 +72,7 @@ int print_d(va_list valist)
 
 int print_c(va_list valist)
 {
-	_putchar(va_arg(valist, char));
+	_putchar(va_arg(valist, int));
 	return (1);
 }
 
