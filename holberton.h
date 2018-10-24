@@ -19,6 +19,6 @@ int print_i(va_list valist);
 int print_s(va_list valist);
 void rev_buff(char *s);
 void _putchar(char c);
-int _itoa(int z)
+int _itoa(int z);
 
 #endif
