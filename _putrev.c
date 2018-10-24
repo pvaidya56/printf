@@ -3,8 +3,7 @@
 
 /**
  * rev_buff - reverses a string
- *@s: string being reversed
- *
+ * @s: string being reversed
  */
 
 void rev_buff(char *s)
