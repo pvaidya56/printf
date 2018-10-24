@@ -4,7 +4,6 @@
 /**
  * rev_buff - reverses a string
  * @s: string being reversed
- * @l: length of string to reverse
  */
 
 void rev_buff(char *s)
