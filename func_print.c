@@ -12,7 +12,7 @@
 
 int func_print(char k, va_list valist)
 {
-	int i;
+	int i, u;
 	void *fnc = va_arg(valist, void *);
 
 	spec chars[] = {
@@ -35,7 +35,8 @@ int func_print(char k, va_list valist)
 	{
 		if (chars[i].id == k)
 		{
-			return (chars[i].func(fnc));
+			u = (chars[i].func(fnc));
 		}
 	}
+	return (u);
 }
