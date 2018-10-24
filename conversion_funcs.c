@@ -31,19 +31,20 @@ int _itoa(int z)
 
 	buff = rev_buff(buff, zind);
 
-	for (ind = 0; 
+	for (ind = 0; ind != '\0'; ind++)
+		;
 
 	return (z);
 }
 
 /**
- * buff_d - prints a double
+ * print_d - prints a double
  * @valist: variable argument list created in _printf
  *
  * Return: number of chars printed
  */
 
-int buff_d(va_list valist)
+int print_d(va_list valist)
 {
 	double k;
 	int y, z, d_index = 0;
@@ -55,7 +56,7 @@ int buff_d(va_list valist)
 	while (k * 10 >= 1)
 	{
 		y = z % 1;
-		putchar(y + 48);
+		_putchar(y + 48);
 		d_index++;
 	}
 
@@ -63,26 +64,26 @@ int buff_d(va_list valist)
 }
 
 /**
- * buff_c - prints a character to stdout
+ * print_c - prints a character to stdout
  * @valist: variable argument list from _printf
  *
  * Return: 1 on success
  */
 
-int buff_c(va_list valist)
+int print_c(va_list valist)
 {
 	_putchar(va_arg(valist, char));
 	return (1);
 }
 
 /**
- * buff_i - prints an integer to stdout
+ * print_i - prints an integer to stdout
  * @valist: variable argument list from _printf
  *
  * Return: number of characters printed
  */
 
-int buff_i(va_list valist)
+int print_i(va_list valist)
 {
 	int x = 0;
 	x = _itoa(va_arg(valist, int));
@@ -91,13 +92,13 @@ int buff_i(va_list valist)
 }
 
 /**
- * buff_s - prints a string to stdout
+ * print_s - prints a string to stdout
  * @valist: variable argument list from _printf
  *
  * Return: number of characters printed
  */
 
-int buff_s(va_list valist)
+int print_s(va_list valist)
 {
 	int i_s = 0;
 	char *st = va_arg(valist, char *);
