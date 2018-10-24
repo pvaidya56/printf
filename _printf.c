@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <unistd.h>
 
 /**
  * _printf - prints a formatted string
@@ -10,14 +11,14 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i, buff_i;
-	char *buff, *str = format;
-	int index;
+	char *buff;
+	const char *str = format;
 	char c;
+	va_list valist;
 
 	if (format == NULL)
 		return;
 
-	va_list valist;
 	va_start(valist, format);
 
 	for (i = 0; str[i] != '\0'; i++)
