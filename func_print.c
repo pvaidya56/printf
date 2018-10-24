@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
+
 /**
  * func_print - Matches the conversion specifier with it's function
  * @k: conversion specifier
@@ -9,26 +10,27 @@
  * Return:gcc The function
  */
 
-int func_print(char k, va_list valist)
+int func_print(char k, va_list spec)
 {
 	int i;
 
-	spec chars;
-
-	spec chars = (struct conv_spec *)malloc(5 * sizeof(struct conv_spec);
-
-	spec chars[] {
-		{"c", buff_i},
-		{"s", buff_s},
-		{"d", buff_d},
-		{"i", buff_i},
-		{'\0', NULL}
+	spec chars[] = {
+                {"c", print_i},
+                {"s", print_s},
+                {"d", print_d},
+                {"i", print_i},
+                {'\0', NULL},
 	};
 
+	spec = (struct conv_spec *)malloc(5 * sizeof(struct conv_spec));
+
+	if (spec == NULL)
+		return (NULL);
+
 	if (k == '%')
-        {
-                putchar('%');
-        }
+	{
+		putchar('%');
+	}
 
 	for (i = 0; chars[i].func != '\0'; i++)
 	{
@@ -38,5 +40,5 @@ int func_print(char k, va_list valist)
 			return (chars[i].func(spec));
 		}
 	}
-
+	va_end(spec);
 }
