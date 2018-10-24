@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct conv_spec = {
+typedef struct conv_spec
+{
 	char id;
 	char *func;
 } spec;
