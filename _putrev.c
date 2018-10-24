@@ -2,12 +2,12 @@
 #include <unistd.h>
 
 /**
- * rev_string - reverses a string
+ * rev_buff - reverses a string
  *@s: string being reversed
  *
  */
 
-void rev_string(char *s)
+void rev_buff(char *s)
 {
 	int i, x, y, c;
 
