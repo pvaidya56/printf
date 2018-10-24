@@ -19,7 +19,7 @@ int _itoa(int z)
 		_putchar('-');
 		z = -(z);
 	}
-	for (zind = 0;z >= 10; zind++)
+	for (zind = 0; z >= 10; zind++)
 	{
 		x = z % 10;
 		buff[zind] = x + 48;
@@ -29,7 +29,7 @@ int _itoa(int z)
 	buff[zind]++;
 	buff[zind] = (z + 48);
 
-        rev_buff(buff);
+	rev_buff(buff);
 
 	for (ind = 0; ind != '\0'; ind++)
 		;
@@ -86,6 +86,7 @@ int print_c(va_list valist)
 int print_i(va_list valist)
 {
 	int x = 0;
+
 	x = _itoa(va_arg(valist, int));
 
 	return (x);
@@ -110,5 +111,5 @@ int print_s(va_list valist)
 		i_s++;
 	}
 
-	return(i_s);
+	return (i_s);
 }
