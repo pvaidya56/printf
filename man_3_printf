@@ -32,11 +32,16 @@ b
 The b argument converts its input to binary in order to be printed to stdout.
 
 FILES
-_printf.c
-conversion_funcs.c
-func_print.c
-holberton.h
 
-BUGS
+_printf.c - contains the main printf function
+conversion_funcs.c - contains functions for conversion of inputs
+func_print.c - finds the correct conversion function
+holberton.h - header file containing struct for func_print and prototypes
 
 EXAMPLE USAGE
+
+int main(void)
+{
+	_printf("Hello, %s", "Jack";
+	return (0);
+}
