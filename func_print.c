@@ -16,11 +16,11 @@ int func_print(char k, va_list valist)
 	void *fnc = va_arg(valist, void *);
 
 	spec chars[] = {
-                {'c', print_i},
-                {'s', print_s},
-                {'d', print_d},
-                {'i', print_i},
-                {'\0', NULL},
+		{'c', print_i},
+		{'s', print_s},
+		{'d', print_d},
+		{'i', print_i},
+		{'\0', NULL},
 	};
 
 	if (fnc == NULL)
@@ -35,7 +35,6 @@ int func_print(char k, va_list valist)
 	{
 		if (chars[i].id == k)
 		{
-			
 			return (chars[i].func(fnc));
 		}
 	}

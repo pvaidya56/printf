@@ -6,6 +6,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
+/**
+ * struct conv_spec - struct containing identifiers and their
+ * conversion specifiers
+ * @id: id character
+ * @func: function pointer to correct conversion function
+ */
+
 typedef struct conv_spec
 {
 	char id;
