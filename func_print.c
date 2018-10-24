@@ -13,6 +13,7 @@
 int func_print(char k, va_list valist)
 {
 	int i;
+	void *fnc = va_arg(valist, void *);
 
 	spec chars[] = {
                 {'c', print_i},
@@ -22,10 +23,8 @@ int func_print(char k, va_list valist)
                 {'\0', NULL},
 	};
 
-	spec = (struct conv_spec *)malloc(5 * sizeof(struct conv_spec));
-
-	if (spec == NULL)
-		return (NULL);
+	if (fnc == NULL)
+		return (0);
 
 	if (k == '%')
 	{
@@ -37,7 +36,7 @@ int func_print(char k, va_list valist)
 		if (chars[i].id == k)
 		{
 			
-			return (chars[i].func(spec));
+			return (chars[i].func(fnc));
 		}
 	}
 }
